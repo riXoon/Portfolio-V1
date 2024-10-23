@@ -65,11 +65,18 @@ body {
 
 .splide__arrow {
   position: absolute !important;
-  background-color:  #2d1b428b!important;
+  background-color: #2d1b428b !important; /* Adjust background color */
   border: none !important;
   font-size: 2rem !important;
-  color: white !important;
   font-weight: 300 !important;
+  z-index: 10 !important; /* Ensure it's above other elements */
+  bottom: 0 !important; /* Ensure arrows are at the bottom */
+   /* Adjust based on bottom alignment */
+}
+
+/* Specifically target the arrow's SVG icon */
+.splide__arrow svg {
+  fill: white !important; /* Change this to your desired color */
 }
 
 .splide__arrow--prev {
@@ -78,6 +85,45 @@ body {
 .splide__arrow--next {
   right: -5.5rem !important;
 }
+
+/* Media query for responsive screens */
+@media (max-width: 768px) { /* Adjust max-width for tablet/mobile view */
+  .splide__arrow {
+    bottom: -10px !important; /* Position arrows at the bottom of the card */
+    left: auto !important;
+    right: auto !important;
+    font-size: 1.5rem !important; /* Reduce the size of the arrows */
+    transform: translateY(650%) !important;
+  }
+
+  .splide__arrow--prev {
+    left: 20% !important; /* Move the arrow slightly inward for smaller screens */
+    right: auto !important;
+  }
+
+  .splide__arrow--next {
+    right: 20% !important; /* Move the arrow slightly inward for smaller screens */
+    left: auto !important;
+  }
+}
+
+@media (max-width: 480px) { /* Further adjustments for mobile screens */
+  .splide__arrow {
+    font-size: 1.2rem !important; /* Smaller arrow size for mobile */
+    bottom: -10px !important; /* Bring the arrows closer to the bottom of the content */
+    transform: translateY(650%) !important;
+  }
+
+  .splide__arrow--prev {
+    left: 15% !important; /* Further adjust for small mobile view */
+  }
+
+  .splide__arrow--next {
+    right: 15% !important; /* Further adjust for small mobile view */
+  }
+}
+
+
 
 
 

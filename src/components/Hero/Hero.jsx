@@ -20,12 +20,10 @@ const Hero = () => {
   const deletingSpeed = 70;
   const phrases = ["Hello there! ", "I'm Erickson Guhilde, "];
 
-  // Track typing index and text length in ref to persist value across renders
   const typingIndex = useRef(0);
   const deletingIndex = useRef(0);
   const currentText = useRef("");
 
-  // Ref for cursor visibility
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
@@ -34,7 +32,6 @@ const Hero = () => {
 
     const typeAndDelete = () => {
       if (phase === 0) {
-        // Typing phase
         typingInterval = setInterval(() => {
           if (typingIndex.current < phrases[phraseIndex].length) {
             currentText.current += phrases[phraseIndex][typingIndex.current];
@@ -42,82 +39,76 @@ const Hero = () => {
             typingIndex.current += 1;
           } else {
             clearInterval(typingInterval);
-            setPhase(1); // Switch to deleting phase after typing is complete
+            setPhase(1);
           }
         }, typingSpeed);
       } else if (phase === 1) {
-        // Deleting phase
         deletingInterval = setInterval(() => {
           if (currentText.current.length > 0) {
             currentText.current = currentText.current.slice(0, -1);
             setText(currentText.current);
           } else {
             clearInterval(deletingInterval);
-            // Once deleted, move to next phrase
-            setPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length); // Move to the next phrase in the cycle
-            setPhase(0); // Restart typing phase
-            typingIndex.current = 0; // Reset typing index for the next phrase
+            setPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+            setPhase(0);
+            typingIndex.current = 0;
           }
         }, deletingSpeed);
       }
     };
 
-    typeAndDelete(); // Start the typing and deleting effect
+    typeAndDelete();
 
     return () => {
       clearInterval(typingInterval);
       clearInterval(deletingInterval);
     };
-  }, [text, phase, phraseIndex]); // Re-run the effect when `text`, `phase`, or `phraseIndex` changes
+  }, [text, phase, phraseIndex]);
 
   useEffect(() => {
-    // Control cursor visibility during typing and deleting phases
     const cursorInterval = setInterval(() => {
       if (phase === 0) {
-        setShowCursor((prev) => !prev); // Toggle cursor visibility while typing
+        setShowCursor((prev) => !prev);
       } else {
-        setShowCursor(false); // Hide cursor while deleting
+        setShowCursor(false);
       }
-    }, 500); // Toggle cursor every 500ms
+    }, 500);
 
-    return () => clearInterval(cursorInterval); // Cleanup cursor interval on unmount
+    return () => clearInterval(cursorInterval);
   }, [phase]);
 
   return (
-    <div className='hero flex flex-col items-center gap-8'>
-      <img src={profile_img} alt="" className='h-48 mt-40'/>
-      <div className="text-container flex flex-col flex-wrap justify-center items-center w-full text-center gap-8">
-        {/* Both typed text and static text are in the same flex container */}
-        <h1 className="text-5xl font-semibold font-outfit flex flex-wrap items-center justify-center w-2/5 leading-tight">
+    <div className='hero flex flex-col items-center gap-8 p-4'>
+      <img src={profile_img} alt="Profile" className='h-48 mt-10 sm:mt-20' />
+      <div className="text-container flex flex-col justify-center items-center w-full text-center gap-8">
+        <h1 className="text-3xl sm:text-5xl font-semibold font-outfit flex flex-wrap items-center justify-center w-full leading-tight">
           <span className="typed-text">{text}</span>
-          {showCursor && <span className="cursor">|</span>} {/* Add a cursor */}
+          {showCursor && <span className="cursor">|</span>}
         </h1>
-
-        <h1 className='text-5xl font-semibold font-outfit'>Front-End Developer based in the Philippines.</h1>
-        <p className='w-8/12 text-lg font-normal leading-8 text-center font-outfit'>
-        I'm a 2nd year Bachelor of Science in Information Technology (BSIT) in Quezon City University.
-      </p>
+        <h1 className='text-3xl sm:text-5xl font-semibold font-outfit'>Front-End Developer based in the Philippines.</h1>
+        <p className='w-full sm:w-8/12 text-lg font-normal leading-8 text-center font-outfit'>
+          I'm a 2nd year Bachelor of Science in Information Technology (BSIT) in Quezon City University.
+        </p>
       </div>
-      
-      <div className='flex gap-16'>
+
+      <div className='flex flex-col sm:flex-row gap-4 sm:gap-16'>
         <Button text="Get in touch" />
-        <div className='py-4 px-8 border-2 rounded-3xl cursor-pointer hover:border-fuchsia-500 duration-500 font-outfit'>My Resume</div>
+        <div className='py-4 px-8 border-2 rounded-3xl cursor-pointer hover:border-fuchsia-500 duration-500 font-outfit'>
+          My Resume
+        </div>
       </div>
 
-      <h1 className='text-3xl font-bold mt-32'>Tech Stacks</h1>
-      <div className='flex gap-5'>
-
-        
-        <img src={tech_1} className='h-20'/>
-        <img src={tech_2} className='h-20'/>
-        <img src={tech_3} className='h-20'/>
-        <img src={tech_4} className='h-20'/>
-        <img src={tech_5} className='h-20'/>
-        <img src={tech_7} className='h-20'/>
-        <img src={tech_8} className='h-20'/>
-        <img src={tech_9} className='h-20'/>
-        <img src={tech_10} className='h-20'/>
-
+      <h1 className='text-3xl font-bold mt-16'>Tech Stacks</h1>
+      <div className='flex flex-wrap justify-center gap-5'>
+        <img src={tech_1} className='h-16 sm:h-20' alt="Tech Stack 1" />
+        <img src={tech_2} className='h-16 sm:h-20' alt="Tech Stack 2" />
+        <img src={tech_3} className='h-16 sm:h-20' alt="Tech Stack 3" />
+        <img src={tech_4} className='h-16 sm:h-20' alt="Tech Stack 4" />
+        <img src={tech_5} className='h-16 sm:h-20' alt="Tech Stack 5" />
+        <img src={tech_7} className='h-16 sm:h-20' alt="Tech Stack 7" />
+        <img src={tech_8} className='h-16 sm:h-20' alt="Tech Stack 8" />
+        <img src={tech_9} className='h-16 sm:h-20' alt="Tech Stack 9" />
+        <img src={tech_10} className='h-16 sm:h-20' alt="Tech Stack 10" />
       </div>
     </div>
   );
