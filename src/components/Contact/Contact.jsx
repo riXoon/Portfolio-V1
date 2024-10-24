@@ -44,7 +44,7 @@ const Contact = () => {
 
     return (
         <>
-            <div className="flex justify-center mt-28 mb-10">
+            <div className="flex justify-center mt-28 mb-10" id='contact'>
                 <div className="w-5/6 h-0.5 bg-slate-300 opacity-50"></div>
             </div>
 

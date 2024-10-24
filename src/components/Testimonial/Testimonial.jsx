@@ -77,7 +77,7 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto flex flex-col justify-center items-center h-screen px-4">
+    <div className="max-w-4xl mx-auto flex flex-col justify-center items-center h-screen px-4" id='testimonial'>
       <div className="text-center mb-8">
         <h1 className="text-3xl font-outfit font-bold mb-4">Testimonial</h1>
         <p className='text-lg font-outfit'>What people that I've worked with say about me.</p>
