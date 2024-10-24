@@ -78,7 +78,7 @@ const Hero = () => {
   }, [phase]);
 
   return (
-    <div className='hero flex flex-col items-center gap-8 p-4'>
+    <div className='hero flex flex-col items-center gap-8 p-4 top-14 relative' id='home'>
       <img src={profile_img} alt="Profile" className='h-48 mt-10 sm:mt-20' />
       <div className="text-container flex flex-col justify-center items-center w-full text-center gap-8">
         <h1 className="text-3xl sm:text-5xl font-semibold font-outfit flex flex-wrap items-center justify-center w-full leading-tight">
@@ -98,7 +98,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <h1 className='text-3xl font-bold mt-16'>Tech Stacks</h1>
+      <h1 className='text-3xl font-bold mt-20'>Tech Stacks</h1>
       <div className='flex flex-wrap justify-center gap-5'>
         <img src={tech_1} className='h-16 sm:h-20' alt="Tech Stack 1" />
         <img src={tech_2} className='h-16 sm:h-20' alt="Tech Stack 2" />
