@@ -18,84 +18,103 @@ export const items = [
     description: "Marites is an online forum/blog posting website where you can post, discuss, and interact with other users! (not open for public use). I applied a parallax effect on its landing page.",
     image: project1,
     tools: ["PHP", "JavaScript", "MySQL"],
-    demo: "Check Demo",
     category: "highlight",
+    demo: "https://your-demo-link.com/marites", // Update with actual demo link
+    source: "https://github.com/your-repo/marites", // Update with actual source link
+
   },
   {
     title: "Furniro",
     description: "Furniro is a furniture shop website that I built when I was trying to review my knowledge on creating a website after a long hiatus. (This website is not responsive but still one of my favorite works).",
     image: project2,
     tools: ["HTML", "CSS", "JavaScript"],
-    demo: "Check Demo",
     category: "highlight",
+    demo: "https://furnir0.netlify.app", // Update with actual demo link
+    source: "https://github.com/riXoon/furniro", // Update with actual source link
+
   },
   {
     title: "FoodNinja",
     description: "I created this simple website when I was studying TailwindCSS and trying to implement it into my projects.",
     image: project3,
     tools: ["JavaScript", "Tailwind"],
-    demo: "Check Demo",
     category: "other",
+    demo: "https://ninjafoood.netlify.app", // Update with actual demo link
+    source: " ", // Update with actual source link
+
   },
   {
     title: "Travlog",
     description: "Travlog is a travel website landing page that I made when I was studying responsive design.",
     image: project4,
     tools: ["HTML", "CSS", "JavaScript"],
-    demo: "Check Demo",
     category: "highlight",
+    demo: "https://trav-vlog.netlify.app", // Update with actual demo link
+    source: "https://github.com/riXoon/travlog", // Update with actual source link
   },
   {
     title: "To-Do List",
     description: "This is a simple To-Do List that I created as part of the ReactJS course that I took.",
     image: project5,
     tools: ["React"],
-    demo: "Check Demo",
     category: "other",
+    demo: "https://tudulis.netlify.app", // Update with actual demo link
+    source: "https://github.com/riXoon/todolist-React", // Update with actual source link
+
   },
   {
     title: "NASA APOD Project",
     description: "NASA APOD Project is a website that generates space photos uploaded by NASA with the help of the NASA APOD API that I implemented in this project.",
     image: project6,
     tools: ["JavaScript"],
-    demo: "Check Demo",
     category: "other",
+    demo: "https://nasa-apod-pr0ject.netlify.app", // Update with actual demo link
+    source: "https://github.com/riXoon/APOD-Project", // Update with actual source link
+
   },
   {
     title: "Monito: Pet Store",
     description: "Monito is a Pet Store where you can buy a pet. It was fun making this website since I always see cute photos of dogs.",
     image: project7,
     tools: ["HTML", "CSS", "JavaScript"],
-    demo: "Check Demo",
     category: "highlight",
+    demo: "https://moonito.netlify.app", // Update with actual demo link
+    source: "https://github.com/riXoon/monito", // Update with actual source link
+
   },
   {
     title: "STI Landing Page",
     description: "This website was commissioned by my first client, a student from STI Sta. Mesa, for their project: Creating a website to promote the STI Sta. Mesa branch. (This project is not yet responsive)",
     image: project8,
     tools: ["HTML", "CSS", "JavaScript"],
-    demo: "Check Demo",
     category: "other",
+    demo: "https://sti-sta-mesa.netlify.app", // Update with actual demo link
+    source: " ", // Update with actual source link
+
   },
   {
     title: "Earth Project",
     description: "I created this project roughly 4 years ago for a homework assignment in programming during senior high school. This was the first time I used JavaScript in a project.",
     image: project9,
     tools: ["HTML", "CSS", "JavaScript"],
-    demo: "Check Demo",
     category: "other",
+    demo: "https://space-earth-project.netlify.app", // Update with actual demo link
+    source: " ", // Update with actual source link
+
   },
   {
     title: "GothamGains: Workout Generator",
     description: "GothamGains is a gym website project that can generate personalized workout plans based on your chosen workout split and target muscles.",
     image: project10,
     tools: ["React", "Tailwind"],
-    demo: "Check Demo",
     category: "highlight",
+    demo: "https://gothamgains.netlify.app", // Update with actual demo link
+    source: "https://github.com/riXoon/GothamGains", // Update with actual source link
+
   },
 ];
 
-const Card = ({ title, description, image, tools, isImageFirst }) => {
+const Card = ({ title, description, image, tools, demo, source, isImageFirst }) => {
   return (
     <div className='mb-20 flex flex-col items-center w-full'>
       {/* Project section */}
@@ -110,11 +129,17 @@ const Card = ({ title, description, image, tools, isImageFirst }) => {
               <div key={index} className="bg-deepPurple px-4 py-2 text-sm">{tool}</div>
             ))}
           </div>
+          <div className='flex gap-10 justify-start md:justify-start flex-wrap'>
+            {/* Add links for demo and source */}
+            <a href={demo} className="px-4 py-2 text-sm" target="_blank" rel="noopener noreferrer">Demo</a>
+            <a href={source} className="px-4 py-2 text-sm" target="_blank" rel="noopener noreferrer">Source</a>
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
 
 const Projects = () => {
   const [filter, setFilter] = useState('highlight');
@@ -127,7 +152,7 @@ const Projects = () => {
   const itemsToDisplay = showAll ? filteredItems : filteredItems.slice(0, 2);
 
   return (
-    <div className='flex flex-col justify-center items-center mt-32'>
+    <div className='flex flex-col justify-center items-center mt-52' id='projects'>
       <h1 className='text-3xl font-bold'>Projects</h1>
       <div className='flex gap-10 mt-12'>
         <button
@@ -160,6 +185,8 @@ const Projects = () => {
                 description={item.description}
                 image={item.image}
                 tools={item.tools}
+                demo={item.demo}
+                source={item.source}
                 isImageFirst={index % 2 === 0}
               />
             </CSSTransition>
