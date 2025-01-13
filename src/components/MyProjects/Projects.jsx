@@ -11,18 +11,41 @@ import project7 from '../../assets/project-7.png';
 import project8 from '../../assets/project-8.png';
 import project9 from '../../assets/project-9.png';
 import project10 from '../../assets/project-10.png';
+import project11 from '../../assets/project-11.png';
+import project12 from '../../assets/project-12.png';
 
-export const items = [
+export const items = [ 
   {
     title: "Marites (Reddit Inspired)",
     description: "Marites is an online forum/blog posting website where you can post, discuss, and interact with other users! (not open for public use). I applied a parallax effect on its landing page.",
     image: project1,
     tools: ["PHP", "JavaScript", "MySQL"],
     category: "highlight",
-    demo: "https://your-demo-link.com/marites", // Update with actual demo link
+    demo: "https://www.facebook.com/erickson.guhilde.50/videos/743079757150092", // Update with actual demo link
     source: "https://github.com/your-repo/marites", // Update with actual source link
 
   },
+  {
+    title: "Zentry Clone",
+    description: "This was my first project this 2025 and I create this website for the sake of learning how animation works in a React environment with the help of tutorials ofc.",
+    image: project12,
+    tools: ["React", "Tailwind"],
+    category: "highlight",
+    demo: "https://zentry-clone-web.netlify.app", 
+    source: "https://github.com/riXoon/zetry-clone",
+  },
+
+  {
+    title: "FriseUp: CRM for CarrotFriezz",
+    description: "FriseUp is our proposed Customer Relationship Management (CRM) system, built using the React framework. Designed to empower Carrot Friezz. (Not open for public use).",
+    image: project11,
+    tools: ["PHP", "React", "MySQL", "Tailwind"],
+    category: "highlight",
+    demo: "https://www.facebook.com/erickson.guhilde.50/videos/1594694208085887", 
+    source: "https://github.com/riXoon/CarrotFriezz-CRM",
+  },
+
+
   {
     title: "Furniro",
     description: "Furniro is a furniture shop website that I built when I was trying to review my knowledge on creating a website after a long hiatus. (This website is not responsive but still one of my favorite works).",
@@ -33,6 +56,7 @@ export const items = [
     source: "https://github.com/riXoon/furniro", // Update with actual source link
 
   },
+
   {
     title: "FoodNinja",
     description: "I created this simple website when I was studying TailwindCSS and trying to implement it into my projects.",
@@ -116,29 +140,62 @@ export const items = [
 
 const Card = ({ title, description, image, tools, demo, source, isImageFirst }) => {
   return (
-    <div className='mb-20 flex flex-col items-center w-full'>
+    <div className="mb-20 flex flex-col items-center w-full">
       {/* Project section */}
-      <div className={`flex flex-col md:flex-row gap-10 w-full justify-center items-center ${isImageFirst ? '' : 'md:flex-row-reverse'}`}>
-        <img src={image} className='h-72 w-auto max-w-full object-contain' alt={title} />
-        <div className='flex flex-col gap-4 w-full md:w-2/5'>
-          <h1 className='text-2xl md:text-4xl text-center md:text-left'>{title}</h1>
-          <p className='text-base md:text-lg text-center md:text-left'>{description}</p>
-          <div className="flex gap-10 justify-center md:justify-start flex-wrap">
-            {/* Loop through the tools array */}
-            {tools && tools.map((tool, index) => (
-              <div key={index} className="bg-deepPurple px-4 py-2 text-sm">{tool}</div>
-            ))}
+      <div
+        className={`flex flex-col md:flex-row gap-10 w-full justify-center items-center ${
+          isImageFirst ? "" : "md:flex-row-reverse"
+        }`}
+      >
+        <img
+          src={image}
+          className="h-72 w-auto max-w-full object-contain"
+          alt={title}
+        />
+        <div className="flex flex-col gap-4 w-full md:w-2/5">
+          <h1 className="text-2xl md:text-4xl text-center md:text-left">
+            {title}
+          </h1>
+          <p className="text-base md:text-lg text-center md:text-left">
+            {description}
+          </p>
+          <div className="flex gap-4 justify-center md:justify-start flex-wrap">
+            {/* Display the tools array */}
+            {tools &&
+              tools.map((tool, index) => (
+                <div
+                  key={index}
+                  className="bg-deepPurple px-4 py-2 text-sm text-white rounded-md"
+                >
+                  {tool}
+                </div>
+              ))}
           </div>
-          <div className='flex gap-10 justify-start md:justify-start flex-wrap'>
-            {/* Add links for demo and source */}
-            <a href={demo} className="px-4 py-2 text-sm" target="_blank" rel="noopener noreferrer">Demo</a>
-            <a href={source} className="px-4 py-2 text-sm" target="_blank" rel="noopener noreferrer">Source</a>
+          <div className="flex md:flex-row md:gap-4 justify-center items-center md:justify-start">
+            {/* Responsive Demo and Source buttons */}
+            <a
+              href={demo}
+              className="px-4 py-2 text-sm text-center text-white underline hover:text-gray-500 transition duration-200  rounded-lg w-full md:w-auto"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Demo
+            </a>
+            <a
+              href={source}
+              className="px-4 py-2 text-sm text-center text-white underline hover:text-gray-500 transition duration-200 rounded-lg w-full md:w-auto"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source
+            </a>
           </div>
         </div>
       </div>
     </div>
   );
 };
+
 
 
 const Projects = () => {
