@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi'; // Import icons from react-icons
 import rixlogo from '../../assets/rixlogo.svg';
+import newLogo from '../../assets/newLogo.png'
 import Button from '../Button/Button';
 
 const Navbar = () => {
@@ -22,7 +23,7 @@ const Navbar = () => {
   return (
     <nav className={`fixed w-full z-20 ${isOpen ? 'bg-deepPurple' : 'bg-transparent'} md:bg-transparent transition-colors duration-300 ease-in-out`}>
       <div className='flex items-center justify-between mx-4 sm:mx-10 md:mx-20 py-4'>
-        <img src={rixlogo} alt="Logo" className='h-10' />
+        <img src={newLogo} alt="Logo" className='size-36' />
 
         {/* Centered Navigation for Desktop */}
         <div className='flex-1 flex justify-center'>
