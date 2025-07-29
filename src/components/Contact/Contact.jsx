@@ -151,7 +151,7 @@ const Contact = () => {
                         placeholder="Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="p-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-500 outline-none transition-all duration-200 ease-in-out w-full"
+                        className="p-4 text-black rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-500 outline-none transition-all duration-200 ease-in-out w-full"
                         required
                     />
 
@@ -160,7 +160,7 @@ const Contact = () => {
                         placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="p-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-500 outline-none transition-all duration-200 ease-in-out w-full"
+                        className="p-4 text-black rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-500 outline-none transition-all duration-200 ease-in-out w-full"
                         required
                     />
 
@@ -168,13 +168,13 @@ const Contact = () => {
                         placeholder="Message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        className="p-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-500 outline-none transition-all duration-200 ease-in-out w-full h-40 resize-none"
+                        className="p-4 text-black rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-500 outline-none transition-all duration-200 ease-in-out w-full h-40 resize-none"
                         required
                     />
 
                     <button
                         type="submit"
-                        className="p-4 rounded-lg bg-violet-500 text-white hover:bg-violet-600 transition-all duration-200 ease-in-out disabled:bg-gray-400 disabled:cursor-not-allowed w-full"
+                        className="p-4 text-black rounded-lg bg-violet-500 text-white hover:bg-violet-600 transition-all duration-200 ease-in-out disabled:bg-gray-400 disabled:cursor-not-allowed w-full"
                         disabled={loading}
                     >
                         {loading ? 'Sending...' : 'Send Message'}
