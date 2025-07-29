@@ -27,7 +27,7 @@ export const items = [
   },
   {
     title: "Zentry Clone",
-    description: "This was my first project this 2025 and I create this website for the sake of learning how animation works in a React environment with the help of tutorials ofc.",
+    description: "This was my first project this 2025 and I created this website for the sake of learning how animation works in a React environment with the help of tutorials ofc.",
     image: project12,
     tools: ["React", "Tailwind"],
     category: "highlight",
