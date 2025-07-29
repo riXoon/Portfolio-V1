@@ -102,7 +102,7 @@ const Contact = () => {
                         </li>
                         <li>
                             <a 
-                                href="https://github.com/erickson-guhilde"
+                                href="https://github.com/riXoon"
                                 target="_blank"
                                 className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400  cursor-pointer"
                             >
@@ -118,6 +118,23 @@ const Contact = () => {
                                     ></path>
                                 </svg>
                             </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="https://www.linkedin.com/in/erickson-guhilde"
+                                target="_blank"
+                                className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400 cursor-pointer"
+                                >
+                                <svg 
+                                    aria-hidden="true" 
+                                    viewBox="0 0 16 16" 
+                                    fill="currentColor" 
+                                    className="w-8 h-8 md:w-10 md:h-10"
+                                >
+                                    <path d="M1.146 1.146C.413 1.879.413 3.121 1.146 3.854c.733.733 1.975.733 2.708 0 .733-.733.733-1.975 0-2.708C3.121.413 1.879.413 1.146 1.146zM.5 5.5h3v10h-3v-10zm5 0h2.837v1.364h.04c.396-.751 1.364-1.54 2.812-1.54 3.01 0 3.57 1.98 3.57 4.554v5.622h-3v-5.004c0-1.194-.022-2.73-1.664-2.73-1.666 0-1.92 1.302-1.92 2.645v5.089h-3v-10z"/>
+                                </svg>
+                                </a>
+
                         </li>
                     </ul>
                 </div>
