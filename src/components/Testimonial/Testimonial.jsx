@@ -8,6 +8,7 @@ import Testi2 from '../../assets/testi-2.png';
 import Testi3 from '../../assets/testi-3.jpg';
 import Testi4 from '../../assets/testi-4.png';
 import Testi5 from '../../assets/testi-5.jpg';
+import Testi6 from '../../assets/testi-6.jpg';
 
 export const feedbacks = [
   {
@@ -45,6 +46,13 @@ export const feedbacks = [
     label: 'Back-End Developer',
     text: "I had the pleasure of working closely with Erickson for the entire semester on the development of our website, 'Marites'. Erickson is an exceptional colleague who consistently demonstrates outstanding programming expertise and dedication. His meticulous attention to detail, strategic thinking, and problem-solving abilities have proven invaluable in achieving exceptional results.",
   },
+  {
+    id: 6,
+    image: Testi6,
+    name: 'Steffani Vienne Carcer',
+    label: 'UI-UX Designer',
+    text: "I worked with Erickson on a summer project as the UI designer. His dedication and superb programming skills really brought the designs to life. He is constantly learning and developing, and I can proudly say that Erickson is a reliable and talented collaborator. Working with him throughout the project was both fun and rewarding.",
+  },
 ];
 
 const Testimonial = () => {
@@ -77,7 +85,7 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto flex flex-col justify-center items-center h-screen px-4" id='testimonial'>
+    <div className="max-w-4xl mx-auto flex flex-col justify-center items-center mt-48 mb-60 " id='testimonial'>
       <div className="text-center mb-8">
         <h1 className="text-3xl font-outfit font-bold mb-4">Testimonial</h1>
         <p className='text-lg font-outfit'>What people that I've worked with say about me.</p>
