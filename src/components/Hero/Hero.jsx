@@ -85,9 +85,9 @@ const Hero = () => {
           <span className="typed-text">{text}</span>
           {showCursor && <span className="cursor">|</span>}
         </h1>
-        <h1 className='text-3xl sm:text-5xl font-semibold font-outfit'>Front-End Developer based in the Philippines.</h1>
+        <h1 className='text-xl sm:text-4xl font-semibold font-outfit'>Aspiring Fullstack Developer | Cybersecurity Enthusiast</h1>
         <p className='w-full sm:w-8/12 text-lg font-normal leading-8 text-center font-outfit'>
-          I'm a 2nd year Bachelor of Science in Information Technology (BSIT) in Quezon City University.
+          I'm a 3rd year Bachelor of Science in Information Technology (BSIT) in Quezon City University.
         </p>
       </div>
 

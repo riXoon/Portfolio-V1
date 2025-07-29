@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <nav className={`fixed w-full z-20 ${isOpen ? 'bg-deepPurple' : 'bg-transparent'} md:bg-transparent transition-colors duration-300 ease-in-out`}>
       <div className='flex items-center justify-between mx-4 sm:mx-10 md:mx-20 py-4'>
-        <img src={newLogo} alt="Logo" className='size-36' />
+        <img src={newLogo} alt="Logo" className='size-28 md:size-32' />
 
         {/* Centered Navigation for Desktop */}
         <div className='flex-1 flex justify-center'>
