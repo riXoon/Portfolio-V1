@@ -5,6 +5,7 @@ import Projects from './components/MyProjects/Projects'
 import Testimonial from './components/Testimonial/Testimonial'
 import Contact from './components/Contact/Contact'
 import { Footer } from './components/Footer/Footer'
+import THMBadge from './components/Badge/THMBadge'
 
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Projects />
+      <THMBadge />
       <Testimonial />
       <Contact />
       <Footer />
