@@ -1,15 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Hero/Hero.css';
 import profile_img from '../../assets/profile_img.svg';
-import tech_1 from '../../assets/tech_1.svg';
-import tech_2 from '../../assets/tech_2.svg';
-import tech_3 from '../../assets/tech_3.svg';
-import tech_4 from '../../assets/tech_4.svg';
-import tech_5 from '../../assets/tech_5.svg';
-import tech_7 from '../../assets/tech_7.svg';
-import tech_8 from '../../assets/tech_8.svg';
-import tech_9 from '../../assets/tech_9.svg';
-import tech_10 from '../../assets/tech_10.svg';
+import { techStack } from '../Data/TechStack';
 import Button from '../Button/Button';
 
 const Hero = () => {
@@ -98,18 +90,24 @@ const Hero = () => {
         </div>
       </div>
 
-      <h1 className='text-3xl font-bold mt-20'>Tech Stacks</h1>
-      <div className='flex flex-wrap justify-center gap-5'>
-        <img src={tech_1} className='h-16 sm:h-20' alt="Tech Stack 1" />
-        <img src={tech_2} className='h-16 sm:h-20' alt="Tech Stack 2" />
-        <img src={tech_3} className='h-16 sm:h-20' alt="Tech Stack 3" />
-        <img src={tech_4} className='h-16 sm:h-20' alt="Tech Stack 4" />
-        <img src={tech_5} className='h-16 sm:h-20' alt="Tech Stack 5" />
-        <img src={tech_7} className='h-16 sm:h-20' alt="Tech Stack 7" />
-        <img src={tech_8} className='h-16 sm:h-20' alt="Tech Stack 8" />
-        <img src={tech_9} className='h-16 sm:h-20' alt="Tech Stack 9" />
-        <img src={tech_10} className='h-16 sm:h-20' alt="Tech Stack 10" />
+      <h1 className='text-3xl font-bold mt-32'>Technologies & Tools</h1>
+   <div className="w-full max-w-6xl mx-auto mt-8 px-4 flex flex-wrap justify-center gap-14">
+        {techStack.map((tech, index) => (
+          <div
+            key={index}
+            className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center"
+          >
+            <img
+              src={tech}
+              alt={`Tech Stack ${index + 1}`}
+              className="max-w-full max-h-full object-contain transition-all duration-300 transform hover:scale-110 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]"
+            />
+          </div>
+        ))}
       </div>
+
+
+
     </div>
   );
 };
