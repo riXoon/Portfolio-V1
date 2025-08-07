@@ -13,6 +13,7 @@ import project9 from '../../assets/project-9.png';
 import project10 from '../../assets/project-10.png';
 import project11 from '../../assets/project-11.png';
 import project12 from '../../assets/project-12.png';
+import project13 from '../../assets/project-13.png'
 
 export const items = [ 
   {
@@ -43,6 +44,16 @@ export const items = [
     category: "highlight",
     demo: "https://www.facebook.com/erickson.guhilde.50/videos/1594694208085887", 
     source: "https://github.com/riXoon/CarrotFriezz-CRM",
+  },
+
+  {
+    title: "Entriq",
+    description: "Entriq blablabla",
+    image: project13,
+    tools: ["HTML", "CSS", "Javascript"],
+    category: "highlight",
+    demo: "https://entriq.netlify.app", 
+    source: "https://github.com/riXoon/EntriqV4",
   },
 
 
